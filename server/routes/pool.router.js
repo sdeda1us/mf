@@ -4,7 +4,7 @@ const Pool = require('../models/pool.model');
 
 router.get('/', (req, res) => {
     Pool.find()
-        .then(pool => res.json(pool))
+        .then(pool => {res.send(pool)})
         .catch(err => res.status(400));
 });
 
