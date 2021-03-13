@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const {teamName, sport, year, owned, active, value, rebate, highBidder, nominator} = req.body.golfTeam
+    const {teamName, sport, year, owned, active, value, rebate, highBidder, nominator} = req.body.addedTeam
 
     const newPool = new Pool({
         sport,
