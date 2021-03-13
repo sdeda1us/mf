@@ -9,12 +9,12 @@ const poolRouter = require('./routes/pool.router');
 
 // Serve static files
 app.use(express.static('build'));
+app.use(express.json());
 
 //server routes
 app.use('/api/players', playersRouter);
 app.use('/api/pool', poolRouter);
 
-require('dotenv').config();
 // App Set //
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');

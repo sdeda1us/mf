@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const poolSchema = new Schema({
     sport: { type: String, required: true},
-    team_name: {type: String, required: true},
+    teamName: {type: String, required: true},
     season: {
         year:{type: Number},
         owned: {type: Boolean},

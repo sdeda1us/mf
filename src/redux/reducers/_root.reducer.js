@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import pool from './pool.reducer';
+import poolReducer from './pool.reducer';
+import playersReducer from './players.reducer';
 
 const rootReducer = combineReducers({
-    pool,
-
+    poolReducer,
+    playersReducer,
 })
 
 export default rootReducer;
