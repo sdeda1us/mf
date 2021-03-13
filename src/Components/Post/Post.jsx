@@ -24,7 +24,7 @@ export default function Post() {
 
     return (
         <div>
-            <button onClick={() => addGolfers()}>Add Golf Letters</button>
+            <button>Add Golf Letters(inacitve, already loaded)</button>
         </div>
     )
 

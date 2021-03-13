@@ -1,4 +1,4 @@
-import './App.css';
+import {Container, Paper} from '@material-ui/core';
 import Login from '../Login/Login.jsx';
 import Logout from '../Logout/Logout.jsx';
 import RouteTest from '../RouteTest/RouteTest.jsx';
@@ -8,13 +8,14 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Login />
-      <Logout />
-      <RouteTest/>
-      <Post/>
-      
-    </div>
+    <Container>
+      <Paper>
+        <Login />
+        <Logout />
+        <RouteTest/>
+        <Post/>
+      </Paper>
+    </Container>
   );
 }
 

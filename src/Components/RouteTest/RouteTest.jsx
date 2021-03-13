@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {Table, TableBody, TableCell, TableHead, TableRow, Typography} from '@material-ui/core';
+import PoolDataList from './PoolDataList.jsx';
 
 export default function RouteTest() {
     const dispatch = useDispatch();
@@ -9,16 +11,27 @@ export default function RouteTest() {
         dispatch({type: 'FETCH_POOL'})
         }, [dispatch]);
 
-    const getPool = () => {
-        dispatch({type: 'FETCH_POOL'});
-    }
-
     return(
-        <div>
-            <p>Click for list of data</p>
-            <button onClick={() => getPool()}>CLICK</button>
-            {pool.map((i)=>(<p>{i.teamName}</p>))}
-        </div>
+        <Table>
+            <TableHead>
+                <TableRow>
+                    <TableCell>Team</TableCell>
+                    <TableCell>Sport</TableCell>
+                    <TableCell>Year</TableCell>
+                    <TableCell>Owned</TableCell>
+                    <TableCell>Active</TableCell>
+                    <TableCell>Value</TableCell>
+                    <TableCell>Rebate</TableCell>
+                    <TableCell>Highest Bidder</TableCell>
+                    <TableCell>Nominator</TableCell>
+                    <TableCell>Bid History</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
+                    {pool.map((team)=>(<PoolDataList team={team}/>))} 
+            </TableBody>
+            
+        </Table>
         
 
     )
