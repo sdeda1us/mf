@@ -11,10 +11,10 @@ export default function PoolDataList({team}) {
             <TableCell>{team.teamName}</TableCell>
             <TableCell>{team.sport}</TableCell>
             <TableCell>{team.season.year}</TableCell>
-            <TableCell>{team.season.owned ? <CheckCircleOutlineIcon/> : <HighlightOffIcon/>}</TableCell>
-            <TableCell>{team.season.active ? <CheckCircleOutlineIcon/> : <HighlightOffIcon/>}</TableCell>
+            <TableCell>{team.season.owned ? <CheckCircleOutlineIcon style={{color:'green'}}/> : <HighlightOffIcon style={{color:'red'}}/>}</TableCell>
+            <TableCell>{team.season.active ? <CheckCircleOutlineIcon style={{color:'green'}}/> : <HighlightOffIcon style={{color:'red'}}/>}</TableCell>
             <TableCell>{team.season.value}</TableCell>
-            <TableCell>{team.season.rebate ? <CheckCircleOutlineIcon/> : <HighlightOffIcon/>}</TableCell>
+            <TableCell>{team.season.rebate ? <CheckCircleOutlineIcon style={{color:'green'}}/> : <HighlightOffIcon style={{color:'red'}}/>}</TableCell>
             <TableCell>{team.season.highBidder}</TableCell>
             <TableCell>{team.season.nominator}</TableCell>
             <TableCell>{team.season.bidHistory}</TableCell>
