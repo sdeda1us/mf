@@ -10,13 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const sport = req.body.sport;
-    const teamName = req.body.teamName;
-    const year = req.body.year;
-    const owned = req.body.owned;
-    const active = req.body.active;
-    const value = req.body.value;
-    const rebate = req.body.rebate;
+    const {teamName, sport, year, owned, active, value, rebate, highBidder, nominator} = req.body.golfTeam
 
     const newPool = new Pool({
         sport,
@@ -26,7 +20,9 @@ router.post('/', (req, res) => {
             owned,
             active,
             value,
-            rebate
+            rebate,
+            highBidder,
+            nominator,
         },
     });
 

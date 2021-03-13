@@ -8,8 +8,13 @@ function* fetchPool(){
    
 }
 
+function* postTeam(action){
+    yield axios.post('/api/pool/', action.payload);
+}
+
 function* poolSaga() {
     yield takeLatest('FETCH_POOL', fetchPool);
+    yield takeLatest('POST_TEAM', postTeam);
   }
   
   export default poolSaga;
