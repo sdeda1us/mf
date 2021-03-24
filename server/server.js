@@ -11,7 +11,7 @@ const poolRouter = require('./routes/pool.router');
 app.use(express.static('build'));
 app.use(express.json());
 
-//server routes
+//server route
 app.use('/api/players', playersRouter);
 app.use('/api/pool', poolRouter);
 

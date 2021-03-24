@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const poolSchema = new Schema({
     sport: { type: String, required: true},
     teamName: {type: String, required: true},
-    season: {
+    season: [{
         year:{type: Number},
         owned: {type: Boolean},
         active: {type: Boolean},
@@ -14,7 +14,7 @@ const poolSchema = new Schema({
         highBidder: {type: String},
         nominator: {type: String},
         bidHistory: [{bid: {type: Number}}, {bidder: {type: String}}],
-    }
+    }]
 },
 {
     timestamps: true,
