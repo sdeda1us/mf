@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Table, TableBody, TableCell, TableHead, TableRow, Typography} from '@material-ui/core';
 import PoolDataList from './PoolDataList.jsx';
 
-export default function RouteTest() {
+export default function AuctionPool() {
     const dispatch = useDispatch();
     const pool = useSelector(state=>state.poolReducer);
     

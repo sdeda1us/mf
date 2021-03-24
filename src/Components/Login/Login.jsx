@@ -1,12 +1,15 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import { useGoogleLogin } from 'react-google-login';
 import {refreshTokenSetup} from '../utils/refreshToken';
 
 
 const clientId = `${process.env.REACT_APP_G_CLIENT_ID}.apps.googleusercontent.com`;
 export default function Login() {
+    const dispatch = useDispatch();
     const onSuccess = (res) => {
         console.log('Login Success: currentUser:', res.profileObj);
+        dispatch({type: 'SET_LOGIN', payload: res.profileObj});
         refreshTokenSetup(res);
     };
    
