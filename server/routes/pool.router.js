@@ -32,4 +32,12 @@ router.post('/', (req, res) => {
     
 })
 
+router.put('/', (req,res) => {
+    const {team, user} = req.body;
+    console.log(user.name, team.teamName);
+    Pool.updateOne({'sport': team.sport, 'teamName': team.teamName, 'season.year': 2021}, {'$set' : {'season.value': .25}, '$push' : {'season.bidHistory': {'bid': .25, 'bidder': user.name}}})
+        .then(() => res.sendStatus(201))
+        .catch(err => res.sendStatus(400));
+})
+
 module.exports = router;
