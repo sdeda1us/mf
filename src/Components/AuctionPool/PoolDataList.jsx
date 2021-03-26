@@ -1,11 +1,13 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {Button, TableCell, TableRow} from '@material-ui/core';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 export default function PoolDataList({team}) {
     const dispatch = useDispatch();
+    const user = useSelector(state => state.loginReducer);
+
 
     return (
         <TableRow>
@@ -18,7 +20,7 @@ export default function PoolDataList({team}) {
                     <CheckCircleOutlineIcon style={{color:'green'}}/> : 
                     <HighlightOffIcon style={{color:'red'}}/>
                 }
-                <Button onClick={()=>{dispatch({type:'SET_AUCTION_ITEM', payload: team})}}>Nominate</Button>
+                <Button onClick={()=>{dispatch({type:'OPEN_BIDDING', payload: {team, user}})}}>Nominate</Button>
             </TableCell>
             <TableCell>{team.season.value}</TableCell>
             <TableCell>{team.season.rebate ? <CheckCircleOutlineIcon style={{color:'green'}}/> : <HighlightOffIcon style={{color:'red'}}/>}</TableCell>
