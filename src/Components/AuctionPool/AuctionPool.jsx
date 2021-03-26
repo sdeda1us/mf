@@ -15,6 +15,7 @@ export default function AuctionPool() {
         <Table>
             <TableHead>
                 <TableRow>
+                    <TableRow></TableRow>
                     <TableCell>Team</TableCell>
                     <TableCell>Sport</TableCell>
                     <TableCell>Year</TableCell>

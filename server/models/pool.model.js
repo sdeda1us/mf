@@ -13,7 +13,7 @@ const poolSchema = new Schema({
         rebate: {type: Boolean},
         highBidder: {type: String},
         nominator: {type: String},
-        bidHistory: [{bid: {type: Number}}, {bidder: {type: String}}],
+        bidHistory: [{}],
     }]
 },
 {
