@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 
 export default function BidWindow() {
-    const auctionItem = useSelector(state => state.auctionItemReducer);
+    const auctionItem = useSelector(state => state.auctionItemReducer[0]);
 
     return (
         <>
