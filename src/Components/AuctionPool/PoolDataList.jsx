@@ -13,18 +13,15 @@ export default function PoolDataList({team}) {
 
     return (
         <TableRow>
-            <TableCell>{auctionItem ? <p>Bid in progress</p> : <Button onClick={()=>{dispatch({type:'OPEN_BIDDING', payload: {team, user}})}}>Nominate</Button>}</TableCell>
+            <TableCell>{auctionItem ? <p>Bid in progress</p> :
+                thisSeason.owned ? <HighlightOffIcon style={{color:'red'}}/> :
+                    <Button onClick={()=>{dispatch({type:'OPEN_BIDDING', payload: {team, user}})}}>Nominate</Button>}
+            </TableCell>
             <TableCell>{team.teamName}</TableCell>
             <TableCell>{team.sport}</TableCell>
             <TableCell>{thisSeason.year}</TableCell>
             <TableCell>{thisSeason.owned ? <CheckCircleOutlineIcon style={{color:'green'}}/> : <HighlightOffIcon style={{color:'red'}}/>}</TableCell>
-            <TableCell>
-                {thisSeason.active || thisSeason.ownend ? 
-                    <CheckCircleOutlineIcon style={{color:'green'}}/> : 
-                    <HighlightOffIcon style={{color:'red'}}/>
-                }
-                <Button onClick={()=>{dispatch({type:'OPEN_BIDDING', payload: {team, user}})}}>Nominate</Button>
-            </TableCell>
+
             <TableCell>{thisSeason.value}</TableCell>
             <TableCell>{thisSeason.rebate ? <CheckCircleOutlineIcon style={{color:'green'}}/> : <HighlightOffIcon style={{color:'red'}}/>}</TableCell>
             <TableCell>{thisSeason.highBidder}</TableCell>
