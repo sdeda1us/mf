@@ -9,7 +9,7 @@ export default function Login() {
     const dispatch = useDispatch();
     const onSuccess = (res) => {
         console.log('Login Success: currentUser:', res.profileObj);
-        dispatch({type: 'SET_LOGIN', payload: res.profileObj});
+        dispatch({type: 'CHECK_LOGIN', payload: res.profileObj});
         refreshTokenSetup(res);
     };
    

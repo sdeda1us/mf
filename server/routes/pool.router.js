@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
     
 })
 
-router.put('/', (req,res) => {
+router.put('/open', (req,res) => {
     const {team, user} = req.body;
     console.log(user.name, team.teamName);
     Pool.updateOne(
@@ -51,6 +51,21 @@ router.put('/', (req,res) => {
             'season.highBidder': user.name
         },
          '$push' : {'season.bidHistory': {'bid': .25, 'bidder': user.name}}
+        }
+    )
+        .then(() => res.sendStatus(201))
+        .catch(err => res.sendStatus(400));
+})
+
+router.put('/close', (req,res) => {
+    const {team, user} = req.body;
+    console.log(user.name, team.teamName);
+    Pool.updateOne(
+        {'sport': team.sport, 'teamName': team.teamName, 'season.year': 2021},
+        {'$set' : {
+                'season.active': false,
+                'season.owned': true,
+            }
         }
     )
         .then(() => res.sendStatus(201))

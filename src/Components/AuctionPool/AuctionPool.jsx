@@ -20,7 +20,6 @@ export default function AuctionPool() {
                     <TableCell>Sport</TableCell>
                     <TableCell>Year</TableCell>
                     <TableCell>Owned</TableCell>
-                    <TableCell>Active</TableCell>
                     <TableCell>Value</TableCell>
                     <TableCell>Rebate</TableCell>
                     <TableCell>Highest Bidder</TableCell>
