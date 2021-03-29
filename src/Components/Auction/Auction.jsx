@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import {Typography} from '@material-ui/core';
 import AuctionPool from '../AuctionPool/AuctionPool';
 import BidWindow from '../BidWindow/BidWindow';
 
@@ -8,7 +9,7 @@ export default function Auction() {
 
     return (
         <>
-            {auctionItem ? <BidWindow/> : <h1>Select a team to bid on</h1>}
+            {auctionItem ? <BidWindow/> : <Typography variant="h3">Select a team to bid on</Typography>}
             <AuctionPool/>
         </>
     )

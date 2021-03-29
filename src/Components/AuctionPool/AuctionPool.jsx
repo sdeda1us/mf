@@ -15,7 +15,7 @@ export default function AuctionPool() {
         <Table>
             <TableHead>
                 <TableRow>
-                    <TableRow></TableRow>
+                    <TableCell></TableCell>
                     <TableCell>Team</TableCell>
                     <TableCell>Sport</TableCell>
                     <TableCell>Year</TableCell>
@@ -26,6 +26,7 @@ export default function AuctionPool() {
                     <TableCell>Nominator</TableCell>
                     <TableCell>Bid History</TableCell>
                 </TableRow>
+               
             </TableHead>
             <TableBody>
                     {pool.map((team)=>(<PoolDataList team={team}/>))} 
