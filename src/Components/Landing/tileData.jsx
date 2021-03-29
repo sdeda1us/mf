@@ -1,4 +1,9 @@
 import Bayern from './bayern.jpeg'
+import tdf from './tdf.jpeg';
+import ipl from './ipl.jpeg';
+import stAndrews from './stAndrews.jpeg';
+import pncPark from './pncPark.jpeg';
+import osaka from './osaka.jpeg';
 
 const tileData = [
     {
@@ -6,52 +11,28 @@ const tileData = [
     title: 'Bayern Munich',
     },
     {
-    img: 'https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82',
-    title: 'Sabiha Plummer',
-    featured: true,
+    img: tdf,
+    title: 'Tour de France',
     },
     {
-      img: 'https://uifaces.co/our-content/donated/KtCFjlD4.jpg',
-      title: 'Arthur Stewart',
+      img: ipl,
+      title: 'India Premier League',
       featured: true,
     },
     {
-      img: 'https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
-      title: 'Hebe Harwood',
+      img: stAndrews,
+      title: 'Saint Andrews',
     },
     
     {
-      img: 'https://uifaces.co/our-content/donated/n4Ngwvi7.jpg',
-      title: 'Keanu Hood',
+      img: pncPark,
+      title: 'PNC Park',
     },
     {
-      img: 'https://uifaces.co/our-content/donated/gPZwCbdS.jpg',
-      title: 'Leonardo Davila',
+      img: osaka,
+      title: 'Naomi Osaka',
     },
-    {
-      img: 'https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&h=350',
-      title: 'Hayleigh Chapman',
-    },
-    {
-      img: 'https://images.pexels.com/photos/1394499/pexels-photo-1394499.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      title: 'Reema English',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1456327102063-fb5054efe647?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=f05c14dd4db49f08a789e6449604c490',
-      title: 'Atticus Aldred',
-    },
-    {
-      img: 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
-      title: 'Cobie Morin',
-    },
-    {
-      img: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&h=350',
-      title: 'Corinne Mcghee',
-    },
-    {
-      img: 'https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&h=350',
-      title: 'Ali Hendricks',
-    },
+    
   ];
   
   export default tileData;
