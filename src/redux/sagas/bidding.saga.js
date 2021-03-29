@@ -13,6 +13,7 @@ function* openBidding(action){
 
 function* closeBidding(action){
     yield axios.put(`api/pool/close`, action.payload);
+    yield axios.put(`api/players`, action.payload);
     yield put({type: 'FETCH_POOL'});
 }
 

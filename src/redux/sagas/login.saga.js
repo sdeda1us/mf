@@ -14,6 +14,7 @@ function* checkLogin(action){
 
 function* loginSaga() {
     yield takeLatest('CHECK_LOGIN', checkLogin);
+    yield takeLatest('FETCH_POOL', fetchPool);
 }
 
 export default loginSaga;

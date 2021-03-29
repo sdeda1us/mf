@@ -5,6 +5,7 @@ import Logout from '../Logout/Logout.jsx';
 import Auction from '../Auction/Auction.jsx';
 import Post from '../Post/Post';
 import Nav from '../Nav/Nav';
+import Landing from '../Landing/Landing';
 import ProtectedRoute from '../Routes/ProtectedRoute';
 import {
   HashRouter as Router,
@@ -25,6 +26,7 @@ function App() {
           <Logout />
           <Nav />
           <Switch>
+            <Route exact path="/" component={Landing}/>
             <ProtectedRoute exact path="/auction" component={Auction}/>
             
             <Post/>
