@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {Button, Grid, Typography} from '@material-ui/core';
+import {Button, FormControl, Grid, InputAdornment, TextField, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,6 +15,13 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid red',
         backgroundColor: 'red',
         color: 'white',
+      },
+      bidBox: {
+          backgroundColor: '#111a4a',
+          color: 'white',
+      },
+      bidInput: {
+          width: '7%',
       }
   }));
 
@@ -24,28 +31,45 @@ export default function BidWindow() {
     const auctionSeason = useSelector(state => state.auctionSeasonReducer);
     const user = useSelector(state => state.loginReducer);
     const classes = useStyles();
-   
+    
 
     return (
-        <Grid container justify = 'center'>
-            <Grid item xs={4}>
+        <>
+        <Grid container justify = 'center' className={classes.bidBox}>
+            <Grid item xs={6}>
                 <Typography variant="h5">
                     Nominated team: {auctionItem.teamName}
                 </Typography>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
                 <Typography variant="h5">
                     Sport: {auctionItem.sport}
                 </Typography>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={6}>
                 <Typography variant="h5">
                     Highest Bid: {auctionSeason.value}
                 </Typography>
             </Grid>
+            <Grid item xs={6}>
+                <Typography variant="h5">
+                    High Bidder: {auctionSeason.highBidder}
+                </Typography>
+            </Grid>
+        </Grid>
+        <Grid container>
+            <FormControl className={classes.bidInput}>
+                <TextField 
+                    variant="filled"
+                    label = "enter bid"
+                    InputProps={{
+                        startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                      }}
+                />
+                        
+                
+            </FormControl>
             
-            
-            <input/>
             <Button className={classes.greenButton}>Make Bid</Button>
             <Button className={classes.redButton}>Pass</Button>
             <Button 
@@ -54,7 +78,8 @@ export default function BidWindow() {
             >
                 Close bidding(testing only)
             </Button>
-            <Typography>Bid History: </Typography>
         </Grid>
+            <Typography>Bid History: </Typography>
+        </> 
     )
 }
