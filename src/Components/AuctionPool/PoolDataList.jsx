@@ -34,8 +34,7 @@ export default function PoolDataList({team}) {
             <TableCell>{thisSeason.value}</TableCell>
             <TableCell>{thisSeason.rebate ? <CheckCircleOutlineIcon style={{color:'green'}}/> : <HighlightOffIcon style={{color:'red'}}/>}</TableCell>
             <TableCell>{thisSeason.highBidder}</TableCell>
-            <TableCell>{thisSeason.nominator}</TableCell>
-            <TableCell>{thisSeason.bidHistory.map(bid => (<>{bid.bidder} {bid.bid}</>))}</TableCell>
+            
         </TableRow>
     )
 
