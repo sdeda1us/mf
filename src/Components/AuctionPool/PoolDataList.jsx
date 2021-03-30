@@ -5,27 +5,26 @@ import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import {makeStyles} from '@material-ui/styles';
 
-// const useStyles = makeStyles((theme) => ({
-//     button: {
-//       padding: theme.spacing(2),
-//       textAlign: 'center',
-//       border: '1px solid #00004d',
-//       color: '#00004d',
-//     }
-//   }));
+const useStyles = makeStyles((theme) => ({
+    greenButton: {
+      textAlign: 'center',
+      border: '1px solid green',
+      color: 'green',
+    }
+  }));
 
 export default function PoolDataList({team}) {
     const dispatch = useDispatch();
     const user = useSelector(state => state.loginReducer);
     const auctionItem = useSelector(state => state.auctionItemReducer[0]);
     const thisSeason = team.season[0];
-
+    const classes = useStyles();
 
     return (
         <TableRow>
             <TableCell>{auctionItem ? <p>Bid in progress</p> :
                 thisSeason.owned ? <HighlightOffIcon style={{color:'red'}}/> :
-                    <Button onClick={()=>{dispatch({type:'OPEN_BIDDING', payload: {team, user}})}}>Nominate</Button>}
+                    <Button className = {classes.greenButton} onClick={()=>{dispatch({type:'OPEN_BIDDING', payload: {team, user}})}}>Nominate</Button>}
             </TableCell>
             <TableCell>{team.teamName}</TableCell>
             <TableCell>{team.sport}</TableCell>
