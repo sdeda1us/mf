@@ -71,6 +71,22 @@ router.put('/close', (req,res) => {
     )
         .then(() => res.sendStatus(201))
         .catch(err => res.sendStatus(400));
-})
+});
+
+router.put('/submit-bid', (req,res) => {
+    const {team, user, bid} = req.body;
+    console.log('in submit bid route');
+    Pool.updateOne(
+        {'sport': team.sport, 'teamName': team.teamName, 'season.year': 2021},
+        {'$set' : {
+                'season.value': bid,
+                'season.highBidder': user.name,
+            },
+         '$push': {'season.bidHistory': {'bid': bid, 'bidder': user.name}}
+        }
+    )
+        .then(() => res.sendStatus(201))
+        .catch(err => res.sendStatus(400));
+});
 
 module.exports = router;

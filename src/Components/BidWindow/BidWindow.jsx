@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {Button, FormControl, Grid, InputAdornment, TextField, Typography} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles';
@@ -31,7 +31,7 @@ export default function BidWindow() {
     const auctionSeason = useSelector(state => state.auctionSeasonReducer);
     const user = useSelector(state => state.loginReducer);
     const classes = useStyles();
-    
+    const [bidInput, setBidInput] = useState(0);
 
     return (
         <>
@@ -65,12 +65,18 @@ export default function BidWindow() {
                     InputProps={{
                         startAdornment: <InputAdornment position="start">$</InputAdornment>,
                       }}
+                    onChange={(event) => {setBidInput(event.target.value)}}
                 />
                         
                 
             </FormControl>
             
-            <Button className={classes.greenButton}>Make Bid</Button>
+            <Button 
+                className={classes.greenButton}
+                onClick={()=>{dispatch({type: 'SUBMIT_BID', payload: {user: user, team: auctionItem, bid: bidInput}})}}
+            >
+                Make Bid
+            </Button>
             <Button className={classes.redButton}>Pass</Button>
             <Button 
                 onClick={()=>
