@@ -5,6 +5,8 @@ function* fetchAuctionItem(){
     try {
         const response = yield axios.get('/api/pool/auction-item');
         yield put({type: 'SET_AUCTION_ITEM', payload: response.data});
+        yield put({type: 'SET_AUCTION_SEASON', payload: response.data[0].season});
+
     }
     catch (error){
         console.log('Error with fetch request in saga', error);

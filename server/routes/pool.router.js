@@ -16,6 +16,7 @@ router.get('/auction-item', (req, res) => {
         .catch(err => res.status(400));
 });
 
+
 router.post('/', (req, res) => {
     const {teamName, sport, year, owned, active, value, rebate, highBidder, nominator} = req.body.addedTeam
 
