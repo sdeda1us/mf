@@ -23,8 +23,7 @@ export default function AuctionPool() {
                     <TableCell>Value</TableCell>
                     <TableCell>Rebate</TableCell>
                     <TableCell>Highest Bidder</TableCell>
-                    <TableCell>Nominator</TableCell>
-                    <TableCell>Bid History</TableCell>
+                    
                 </TableRow>
                
             </TableHead>
