@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Table, TableBody, TableCell, TableHead, TableRow} from '@material-ui/core';
 import PoolDataList from './PoolDataList.jsx';
+import TableTools from './TableTools';
+
 
 export default function AuctionPool() {
     const dispatch = useDispatch();
@@ -25,7 +27,7 @@ export default function AuctionPool() {
                     <TableCell>Highest Bidder</TableCell>
                     
                 </TableRow>
-               
+                <TableTools/>
             </TableHead>
             <TableBody>
                     {pool.map((team)=>(<PoolDataList  team={team}/>))}

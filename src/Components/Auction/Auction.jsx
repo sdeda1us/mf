@@ -17,7 +17,7 @@ export default function Auction() {
     return (
         <>
             {auctionItem ? <BidWindow/> : <Typography variant="h3">Select a team to bid on</Typography>}
-            <AuctionToolbar/>
+            {/*<AuctionToolbar/>*/}
             <AuctionPool/>
         </>
     )
