@@ -8,7 +8,6 @@ import ProtectedRoute from '../Routes/ProtectedRoute';
 import {
   HashRouter as Router,
   Route,
-  Redirect,
   Switch,
 } from 'react-router-dom';
 

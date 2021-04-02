@@ -27,7 +27,7 @@ export default function Login() {
 
     return (
         <button onClick={signIn} className="button">
-            <img src="icons/google.svg"></img>
+            <img src="icons/google.svg" alt={"google icon"}></img>
             <span className="buttonText">Sign in with Google</span>
         </button>
     )

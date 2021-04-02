@@ -21,7 +21,7 @@ export default function PoolDataList({team}) {
     const classes = useStyles();
 
     return (
-        <TableRow>
+        <TableRow key={team.id}>
             <TableCell>{auctionItem ? <p>Bid in progress</p> :
                 thisSeason.owned ? <HighlightOffIcon style={{color:'red'}}/> :
                     <Button className = {classes.greenButton} onClick={()=>{dispatch({type:'OPEN_BIDDING', payload: {team, user}})}}>Nominate</Button>}

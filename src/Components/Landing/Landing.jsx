@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Card, GridList, GridListTile} from '@material-ui/core';
+import {GridList, GridListTile} from '@material-ui/core';
 import tileData from './tileData';
 
 

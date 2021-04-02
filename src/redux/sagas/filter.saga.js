@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function* fetchFilterPool(action){
     try {
-        console.log('in fetchFilterPool saga');
+        console.log(`in fetchFilterPool saga. filtercolumn payload=${action.payload.filterColumn} filterfor payload=${action.payload.filterFor}`);
         const response = yield axios.get(`/api/pool/${action.payload.filterColumn}/${action.payload.filterFor}`);
         yield put({type: 'SET_POOL', payload: response.data});
     }

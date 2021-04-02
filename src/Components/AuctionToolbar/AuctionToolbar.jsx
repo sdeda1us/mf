@@ -49,7 +49,7 @@ export default function AuctionToolbar() {
     const classes= useStyles();
     const dispatch = useDispatch();
     const [filterColumn, setFilterColumn] = useState('none');
-    const [filterFor, setFilterFor] = useState('none');
+    const [filterFor, setFilterFor] = useState('');
     const playersList = useSelector(state => state.playersReducer);
     const auctionSports = useSelector(state => state.auctionSportsReducer);
 
@@ -70,11 +70,11 @@ export default function AuctionToolbar() {
             <TextField
                 select
                 label="Filter for"
-                value={filterColumn}
+                value={filterFor}
                 onChange={(event)=>{setFilterFor(event.target.value)}}
             >
                 {filterColumn === 'none' ? <MenuItem value = 'none'>None</MenuItem> : 
-                    filterColumn === 'owned' || filterColumn == 'rebate' ? 
+                    filterColumn === 'owned' || filterColumn === 'rebate' ?
                         <>
                             <MenuItem value={true}>Yes</MenuItem>
                             <MenuItem value={false}>No</MenuItem> 

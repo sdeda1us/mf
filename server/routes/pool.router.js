@@ -26,7 +26,8 @@ router.get('/auction-sports', (req, res) => {
 
 router.get(`/:id/:value`, (req, res) => {
     const {id, value} = req.params;
-    Pool.find({id: value})
+    console.log('Values in filter request', id, value);
+    Pool.find({sport: value})
         .then(pool => {res.send(pool)})
         .catch(err => res.status(400));
 })
