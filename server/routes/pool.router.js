@@ -16,6 +16,21 @@ router.get('/auction-item', (req, res) => {
         .catch(err => res.status(400));
 });
 
+router.get('/auction-sports', (req, res) => {
+    console.log('getting auction sports in pool router');
+    Pool.distinct('sport')
+        .then(pool => {res.send(pool)})
+        .catch(err => res.status(400));
+});
+
+
+router.get(`/:id/:value`, (req, res) => {
+    const {id, value} = req.params;
+    Pool.find({id: value})
+        .then(pool => {res.send(pool)})
+        .catch(err => res.status(400));
+})
+
 
 router.post('/', (req, res) => {
     const {teamName, sport, year, owned, active, value, rebate, highBidder, nominator} = req.body.addedTeam

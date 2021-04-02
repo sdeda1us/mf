@@ -10,6 +10,7 @@ function* fetchPool(){
 function* checkLogin(action){
     yield axios.post('/api/players/', action.payload);
     yield put({type: 'SET_LOGIN', payload: action.payload});
+    yield put({type: 'FETCH_PLAYERS'});
 }
 
 function* loginSaga() {

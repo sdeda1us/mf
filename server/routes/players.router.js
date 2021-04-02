@@ -3,6 +3,13 @@ const router = express.Router();
 const Players = require('../models/players.model');
 
 
+router.get('/', (req, res) => {
+    console.log('in players get route on server side');
+    Players.distinct('username')
+        .then(pool => {res.send(pool)})
+        .catch(err => res.status(400));
+})
+
 router.post('/', (req, res) => {
     const arrayOfEmails = ['steven.maloney@gmail.com', 'liamtoohey@gmail.com', 'demedici@gmail.com', 'lowellpf@gmail.com', 'adaniller@gmail.com'];
     const {email, name} = req.body;
