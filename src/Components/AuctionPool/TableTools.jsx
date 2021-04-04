@@ -2,37 +2,30 @@ import React from 'react';
 import {Grid, TableRow, TableCell} from '@material-ui/core';
 import TableSort from './TableSort';
 import TableFilter from './TableFilter';
+import {makeStyles} from "@material-ui/styles";
 
-export default function TableTools() {
+const useStyles = makeStyles((theme) => ({
+    toolRow: {
+        backgroundColor: 'lightgray',
+    },
+    headerCell: {
+        textAlign: 'left',
+        color: 'black',
+    }
+
+}));
+
+export default function TableTools({headerNames}) {
+    const classes = useStyles();
 
     return (
-        <TableRow>
-            <TableCell></TableCell>
-            <TableCell>
-               <Grid container><TableSort/></Grid>
-            </TableCell>
-            <TableCell>
-                <Grid container>
-                    <TableSort/>
-                    <TableFilter/>
-                </Grid>
-            </TableCell>
-            <TableCell></TableCell>
-            <TableCell>
-                <TableSort/>
-                <TableFilter/>
-            </TableCell>
-            <TableCell>
-                <TableSort/>
-            </TableCell>
-            <TableCell>
-                <TableSort/>
-                <TableFilter/>
-            </TableCell>
-            <TableCell>
-                <TableSort/>
-                <TableFilter/>
-            </TableCell>
+        <TableRow className={classes.toolRow}>
+            {headerNames.map((n)=>(
+                <TableCell>
+                    {n.sort ? <TableSort/> : <></>}
+                    {n.filter ? <TableFilter/> : <></>}
+                </TableCell>))}
         </TableRow>
+
     )
 }
