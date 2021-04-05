@@ -22,7 +22,7 @@ export default function TableTools({headerNames}) {
         <TableRow className={classes.toolRow}>
             {headerNames.map((n)=>(
                 <TableCell>
-                    {n.sort ? <TableSort/> : <></>}
+                    {n.sort ? <TableSort name={n.searchTerm}/> : <></>}
                     {n.filter ? <TableFilter/> : <></>}
                 </TableCell>))}
         </TableRow>

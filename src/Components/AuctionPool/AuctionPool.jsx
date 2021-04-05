@@ -30,13 +30,13 @@ export default function AuctionPool() {
 
     const headerNames = [
         {name:'', sort: false, filter: false},
-        {name:'Team', sort: true, filter: false},
-        {name: 'Sport', sort: true, filter: true},
-        {name: 'Year', sort: false, filter: false},
-        {name: 'Owned', sort: true, filter: true},
-        {name: 'Value', sort: true, filter: false},
-        {name: 'Rebate', sort: true, filter: true},
-        {name: 'Highest Bidder', sort: true, filter: true}
+        {name:'Name', sort: true, filter: false, searchTerm: 'teamName'},
+        {name: 'Sport', sort: true, filter: true, searchTerm: 'sport'},
+        {name: 'Year', sort: false, filter: false, searchTerm: 'season.year'},
+        {name: 'Owned', sort: true, filter: true, searchTerm: 'season.owned'},
+        {name: 'Value', sort: true, filter: false, searchTerm: 'season.value'},
+        {name: 'Rebate', sort: true, filter: true, searchTerm: 'season.rebate'},
+        {name: 'Highest Bidder', sort: true, filter: true, searchTerm: 'season.highBidder'}
     ]
     return(
         <Table>
@@ -53,7 +53,6 @@ export default function AuctionPool() {
             <TableBody>
                     {pool.map((team)=>(<PoolDataList  team={team}/>))}
             </TableBody>
-            
         </Table>
         
 

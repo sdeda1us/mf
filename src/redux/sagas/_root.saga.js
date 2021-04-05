@@ -6,10 +6,12 @@ import auctionItemSaga from "./auctionItem.saga";
 import loginSaga from './login.saga';
 import auctionSaga from './auction.saga';
 import filterSaga from './filter.saga';
+import sortSaga from './sort.saga';
 
 export default function* rootSaga() {
     console.log('made it to root saga');
     yield all([
+        sortSaga(),
         filterSaga(),
         auctionSaga(),
         loginSaga(),

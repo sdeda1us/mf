@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button} from '@material-ui/core';
+import {Button, Tooltip} from '@material-ui/core';
 import {ImFilter} from 'react-icons/im';
 import {makeStyles} from "@material-ui/styles";
 
@@ -16,8 +16,10 @@ export default function TableFilter() {
     const classes = useStyles();
 
     return (
-        <Button className={classes.tableFilterButton}>
-            <ImFilter/>
-        </Button>
+        <Tooltip title={"filter"}>
+            <Button className={classes.tableFilterButton}>
+                <ImFilter/>
+            </Button>
+        </Tooltip>
     )
 }

@@ -6,6 +6,7 @@ const app = express();
 //Include routes
 const playersRouter = require('./routes/players.router');
 const poolRouter = require('./routes/pool.router');
+const sortRouter = require('./routes/sort.router');
 
 // Serve static files
 app.use(express.static('build'));
@@ -14,6 +15,7 @@ app.use(express.json());
 //server route
 app.use('/api/players', playersRouter);
 app.use('/api/pool', poolRouter);
+app.use('/api/sort', sortRouter);
 
 // App Set //
 const PORT = process.env.PORT || 5000;
